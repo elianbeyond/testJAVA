@@ -1,19 +1,16 @@
 package Leetcode;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Leetcode {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String s = "abc";
-        String[] s2 = solution.permutation(s);
-        for (String s3 : s2) {
-            System.out.println(s3);
-        }
-        TreeNode a = new TreeNode(1);
-        a.left = new TreeNode(2);
+        Integer [] arr ={3,1,4,null,2};
+        System.out.println(solution.kthLargest(LeetCodeUtil.createTree(arr),arr.length));
 
-        LeetCodeUtil.show(a);
 
 
     }
@@ -21,34 +18,14 @@ public class Leetcode {
 }
 
 class Solution {
-    public String[] permutation(String s) {
+    //子串--滑动窗口
+    //这个题目我们找到每一个right窗口对应的最大的无重字串，最后比大小存进res
+    //由于right增加后，前面的序列不变，该重复还得重复，故left不用清零，继续增加即可
+    List<Integer> res = new LinkedList<>();
+    public int kthLargest(TreeNode root, int k) {
+        return 0;
 
-        HashSet<String> hs = new HashSet<>();
-
-        for (int i = 0; i < s.length(); i++) {
-            char item1 = s.charAt(i);
-            String s1 = String.valueOf(item1);
-            for (int j = 0; j < s.length(); j++) {
-                char item2 = s.charAt(j);
-                if (item2 == item1) {
-                    continue;
-                }
-                String s2 = String.valueOf(item2);
-                for (int k = 0; k < s.length(); k++) {
-                    char item3 = s.charAt(k);
-                    if (item3 == item2 || item3 == item1) {
-                        continue;
-                    }
-                    String s3 = String.valueOf(item3);
-                    String str = s1 + s2 + s3;
-                    hs.add(str);
-                }
-            }
-
-        }
-        String[] array = new String[hs.size()];
-        return hs.toArray(array);
 
     }
-
+    void
 }
