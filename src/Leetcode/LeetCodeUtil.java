@@ -92,14 +92,7 @@ public class LeetCodeUtil {
         return node;
     }
 
-    /*按图形打印
-    树的结构示例：
-              1
-            /   \
-          2       3
-         / \     / \
-        4   5   6   7
-    */
+
 
     // 用于获得树的层数
     public static int getTreeDepth(TreeNode root) {
@@ -133,7 +126,14 @@ public class LeetCodeUtil {
         }
     }
 
-
+    /*按图形打印
+       树的结构示例：
+                 1
+               /   \
+             2       3
+            / \     / \
+           4   5   6   7
+       */
     public static void show(TreeNode root) {
         if (root == null) System.out.println("EMPTY!");
         // 得到树的深度
